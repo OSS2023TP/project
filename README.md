@@ -1,7 +1,13 @@
 # 2023 OSS Mini project
+<div align="center">
+<p align="center"><img src="./img/AI_Project.jpg" height="300px" width="800px"></p>
+
+### Welcome to AI Project Manager
+</div>
 
 ## 프로젝트 주제
   - AI model 개발 일정 관리 프로그램
+<p align="center"><img src="./img/weekly.png" height="300px" width="300px"></p>
 
 ## 프로젝트 소개
   - 여러 가지 AI model 개발할 때 각 model의 개발 일정과 현재 상태 등 일정을 관리하는 프로그램입니다.
