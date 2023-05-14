@@ -6,7 +6,7 @@ typedef struct {
     char title[128];
     char due_date[32];
     int Acc;
-    int compelete;
+    int compeleted;
     char engineer[128];
     char description[256];
 } Task;
@@ -20,8 +20,8 @@ int createTask(Task *t);
 int updateTask(Task *t);
 
 void searchDuedate(Task **t, int count);
-void searchPriority(Task **t, int count);
-void searchCompleted(Task **t, int count);
+void searchEngineer(Task **t, int count);
+void searchTask(Task **t, int count);
 
 int loadData(Task **t);
 void saveData(Task **t, int count);
