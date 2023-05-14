@@ -22,7 +22,7 @@ int selectMenu(){
 
 void listTask(Task *t[], int count){
         int i = 0;
-        printf("No. Model(task)    DueDate     Acc(%)    CompeletionRate(%)    Engineer    Description\n");
+        printf("No. Model(task)            DueDate     Acc(%%) CompeletionRate(%%)    Engineer    Description\n");
         printf("------------------------------------------------------------------------------------\n");
         for (i = 0; i < count; i++){
                 if (t[i] == NULL) continue;
@@ -34,7 +34,7 @@ void listTask(Task *t[], int count){
 
 // 하나의 Task 출력
 void readTask(Task t){
-        printf("%-10s %-10s %-3d %-3d %-10s %-10s\n", t.title, t.due_date, t.Acc, t.compeleted, t.engineer, t.description);
+        printf("%-22s %-11s %-5d %-5d %-10s %s\n", t.title, t.due_date, t.Acc, t.compeleted, t.engineer, t.description);
 }
 
 // Select Data Number
@@ -52,9 +52,9 @@ int createTask(Task *t){
         scanf(" %[^\n]", t->title);
         printf("DueDate(ex. 20230415)? ");
         scanf(" %s", t->due_date);
-        printf("Test Acc(%)? ");
+        printf("Test Acc(%%)? ");
         scanf(" %d", &t->Acc);
-        printf("Task CompeletionRate(%)? ");
+        printf("Task CompeletionRate(%%)? ");
         scanf(" %d", &t->compeleted);
         printf("Task Engineer? ");
         scanf(" %s", t->engineer);
@@ -71,9 +71,9 @@ int updateTask(Task *t){
         scanf(" %[^\n]", t->title);
         printf("DueDate(ex. 20230415)? ");
         scanf(" %s", t->due_date);
-        printf("Test Acc(%)? ");
+        printf("Test Acc(%%)? ");
         scanf(" %d", &t->Acc);
-        printf("Task CompeletionRate(%)? ");
+        printf("Task CompeletionRate(%%)? ");
         scanf(" %d", &t->compeleted);
         printf("Task Engineer? ");
         scanf(" %s", t->engineer);
@@ -89,7 +89,7 @@ void searchDuedate(Task **t, int count){
         int scnt = 0;
         printf("검색할 Task Duedate? ");
         scanf("%s", dname);
-        printf("No. Model(task)    DueDate     Acc(%)    CompeletionRate(%)    Engineer    Description\n");
+        printf("No. Task(model)    DueDate     Acc(%%)    CompeletionRate(%%)    Engineer    Description\n");
         printf("------------------------------------------------------------------------------------\n");
         for(int i = 0; i < count; i++){
                 if((*t)[i].Acc == -1) continue;
@@ -104,12 +104,12 @@ void searchDuedate(Task **t, int count){
 }
 
 // Task Engineer 검색
-void searchDuedate(Task **t, int count){
+void searchEngineer(Task **t, int count){
         char ename[20];
         int scnt = 0;
         printf("검색할 Engineer? ");
         scanf("%s", ename);
-        printf("No. Model(task)    DueDate     Acc(%)    CompeletionRate(%)    Engineer    Description\n");
+        printf("No. Task(model)    DueDate     Acc(%%)    CompeletionRate(%%)    Engineer    Description\n");
         printf("------------------------------------------------------------------------------------\n");
         for(int i = 0; i < count; i++){
                 if((*t)[i].Acc == -1) continue;
@@ -129,7 +129,7 @@ void searchTask(Task **t, int count){
         int scnt = 0;
         printf("검색할 Task? ");
         scanf(" %s", tname);
-        printf("No. Model(task)    DueDate     Acc(%)    CompeletionRate(%)    Engineer    Description\n");
+        printf("No. Task(model)    DueDate     Acc(%%)    CompeletionRate(%%)    Engineer    Description\n");
         printf("------------------------------------------------------------------------------------\n");
         for(int i = 0; i < count; i++){
                 if((*t)[i].Acc == -1) continue;
