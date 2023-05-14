@@ -27,10 +27,10 @@
 
 ## 팀 소개 및 역할
 ### 팀원
-  #### 전제우 
+  #### <img src="./img/profile1.png" height="20px" width="20px"> 전제우 
     - 기획
     - CRUD 기능 개발
     - git page 관리
-  #### 조아민
+  #### <img src="./img/profile2.png" height="20px" width="20px"> 조아민
     - 기획
     - 기능 추가 및 개선
