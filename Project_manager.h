@@ -25,3 +25,5 @@ void searchTask(Task **t, int count);
 
 int loadData(Task **t);
 void saveData(Task **t, int count);
+
+void show_info(Task *t[], int count);//amin

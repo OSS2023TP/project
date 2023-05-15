@@ -36,6 +36,7 @@ int main(void) {
     else if(menu == 6) searchDuedate(tlist, index);
     else if(menu == 7) searchEngineer(tlist, index);
     else if(menu == 8) searchTask(tlist, index);
+    else if(menu == 9) show_info(tlist, index);
   }
   printf("종료됨!\n");
   return 0; 

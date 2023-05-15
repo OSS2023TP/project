@@ -5,17 +5,18 @@
 
 int selectMenu(){
         int menu;
-        printf("\n*** ì œí’ˆ ê²€ìƒ‰ì°½ ***\n");
-        printf("1. Task ì¡°íšŒ\n");
-        printf("2. Task ì¶”ê°€\n");
-        printf("3. Task ìˆ˜ì •\n");
-        printf("4. Task ì‚­ì œ\n");
-        printf("5. íŒŒì¼ ì €ìž¥\n");
-        printf("6. Task DueDate ê²€ìƒ‰\n");
-        printf("7. Task ì±…ìž„ìž ê²€ìƒ‰\n");
-        printf("8. Model ê²€ìƒ‰\n");
-        printf("0. ì¢…ë£Œ\n\n");
-        printf("=> ì›í•˜ëŠ” ë©”ë‰´ëŠ”? ");
+        printf("\n*** Á¦Ç° °Ë»öÃ¢ ***\n");
+        printf("1. Task Á¶È¸\n");
+        printf("2. Task Ãß°¡\n");
+        printf("3. Task ¼öÁ¤\n");
+        printf("4. Task »èÁ¦\n");
+        printf("5. ÆÄÀÏ ÀúÀå\n");
+        printf("6. Task DueDate °Ë»ö\n");
+        printf("7. Task Ã¥ÀÓÀÚ °Ë»ö\n");
+        printf("8. Model °Ë»ö\n");
+        printf("9. Task ÀÚ¼¼È÷ º¸±â\n");
+        printf("0. Á¾·á\n\n");
+        printf("=> ¿øÇÏ´Â ¸Þ´º´Â? ");
         scanf("%d", &menu);
         return menu;
 }
@@ -32,7 +33,7 @@ void listTask(Task *t[], int count){
         printf("\n");
 }
 
-// í•˜ë‚˜ì˜ Task ì¶œë ¥
+// ÇÏ³ªÀÇ Task Ãâ·Â
 void readTask(Task t){
         printf("%-22s %-11s %-5d %-5d %-10s %s\n", t.title, t.due_date, t.Acc, t.compeleted, t.engineer, t.description);
 }
@@ -41,12 +42,12 @@ void readTask(Task t){
 int selectDataNo(Task *t[], int count){
         int no;
         listTask(t, count);
-        printf("\në²ˆí˜¸ëŠ” (ì·¨ì†Œ:0)? ");
+        printf("\n¹øÈ£´Â (Ãë¼Ò:0)? ");
         scanf("%d", &no);
         return no;
 }
 
-// Task ì¶”ê°€
+// Task Ãß°¡
 int createTask(Task *t){
         printf("Task Name? ");
         scanf(" %[^\n]", t->title);
@@ -60,12 +61,12 @@ int createTask(Task *t){
         scanf(" %s", t->engineer);
         printf("Description? ");
         scanf(" %[^\n]", t->description);
-        printf("=> ì¶”ê°€ë¨!\n");
+        printf("=> Ãß°¡µÊ!\n");
         return 1;
 }
 
 
-// Task ìˆ˜ì •
+// Task ¼öÁ¤
 int updateTask(Task *t){
         printf("Task Name? ");
         scanf(" %[^\n]", t->title);
@@ -79,15 +80,15 @@ int updateTask(Task *t){
         scanf(" %s", t->engineer);
         printf("Description? ");
         scanf(" %[^\n]", t->description);
-        printf("=> ìˆ˜ì •ì™„ë£Œ!\n");
+        printf("=> ¼öÁ¤¿Ï·á!\n");
         return 1;
 }
 
-// Task DueDate ê²€ìƒ‰
+// Task DueDate °Ë»ö
 void searchDuedate(Task **t, int count){
         char dname[20];
         int scnt = 0;
-        printf("ê²€ìƒ‰í•  Task Duedate? ");
+        printf("°Ë»öÇÒ Task Duedate? ");
         scanf("%s", dname);
         printf("No. Task(model)    DueDate     Acc(%%)    CompeletionRate(%%)    Engineer    Description\n");
         printf("------------------------------------------------------------------------------------\n");
@@ -99,15 +100,15 @@ void searchDuedate(Task **t, int count){
                         scnt ++;
                 }
         }
-        if(scnt == 0) printf("=> ê²€ìƒ‰ëœ ë°ì´í„° ì—†ìŒ!");
+        if(scnt == 0) printf("=> °Ë»öµÈ µ¥ÀÌÅÍ ¾øÀ½!");
         printf("\n");
 }
 
-// Task Engineer ê²€ìƒ‰
+// Task Engineer °Ë»ö
 void searchEngineer(Task **t, int count){
         char ename[20];
         int scnt = 0;
-        printf("ê²€ìƒ‰í•  Engineer? ");
+        printf("°Ë»öÇÒ Engineer? ");
         scanf("%s", ename);
         printf("No. Task(model)    DueDate     Acc(%%)    CompeletionRate(%%)    Engineer    Description\n");
         printf("------------------------------------------------------------------------------------\n");
@@ -119,15 +120,15 @@ void searchEngineer(Task **t, int count){
                         scnt ++;
                 }
         }
-        if(scnt == 0) printf("=> ê²€ìƒ‰ëœ ë°ì´í„° ì—†ìŒ!");
+        if(scnt == 0) printf("=> °Ë»öµÈ µ¥ÀÌÅÍ ¾øÀ½!");
         printf("\n");
 }
 
-// Task Task ê²€ìƒ‰
+// Task Task °Ë»ö
 void searchTask(Task **t, int count){
         char tname[3];
         int scnt = 0;
-        printf("ê²€ìƒ‰í•  Task? ");
+        printf("°Ë»öÇÒ Task? ");
         scanf(" %s", tname);
         printf("No. Task(model)    DueDate     Acc(%%)    CompeletionRate(%%)    Engineer    Description\n");
         printf("------------------------------------------------------------------------------------\n");
@@ -139,17 +140,17 @@ void searchTask(Task **t, int count){
                         scnt ++;
                 }
         }
-        if(scnt == 0) printf("=> ê²€ìƒ‰ëœ ë°ì´í„° ì—†ìŒ!");
+        if(scnt == 0) printf("=> °Ë»öµÈ µ¥ÀÌÅÍ ¾øÀ½!");
         printf("\n");
 }
 
-// Fileì—ì„œ ë°ì´í„° ë¶ˆëŸ¬ì˜¤ê¸°
+// File¿¡¼­ µ¥ÀÌÅÍ ºÒ·¯¿À±â
 int loadData(Task **t) {
         int i = 0;
         FILE *fp;
         fp = fopen("Task.txt", "rt");
         if(fp == NULL) {
-                printf("=> íŒŒì¼ ì—†ìŒ\n");
+                printf("=> ÆÄÀÏ ¾øÀ½\n");
                 return i;
         }
         else {
@@ -164,12 +165,12 @@ int loadData(Task **t) {
                         fscanf(fp, "%[^,],", t[i]->description);
                 }
                 fclose(fp);
-                printf("=> ë¡œë”© ì„±ê³µ!\n");
+                printf("=> ·Îµù ¼º°ø!\n");
         }
         return i;
 }
 
-// File ì €ìž¥
+// File ÀúÀå
 void saveData(Task **t, int count) {
         FILE *fp;
         fp = fopen("Task.txt", "wt");
@@ -178,5 +179,5 @@ void saveData(Task **t, int count) {
                 fprintf(fp, "%s, %s, %d, %d, %s, %s\n", t[i]->title, t[i]->due_date, t[i]->Acc, t[i]->compeleted, t[i]->engineer, t[i]->description);
         }
         fclose(fp);
-        printf("=> ì €ìž¥ë¨! \n");
+        printf("=> ÀúÀåµÊ! \n");
 }
