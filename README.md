@@ -2,7 +2,7 @@
 <div align="center">
 <p align="center"><img src="./img/AI_Project.jpg" height="300px" width="800px"></p>
 
-### Welcome to AI Project Manager
+### <img src="./img/artificial-intelligence.png" height="20px" width="20px"> Welcome to AI Project Manager
 </div>
 
 ## 프로젝트 주제
