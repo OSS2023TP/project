@@ -6,15 +6,16 @@
 void show_info(Task *t[], int count){
     listTask(t, count);
     int n;
-    printf("ÀÚ¼¼È÷ º¸°í½ÍÀº task ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+    printf("ìžì„¸ížˆ ë³´ê³ ì‹¶ì€ task ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
     scanf("%d", &n);
     n-=1;
     if(n > count || n < 0){
-        printf("ÇØ´ç task´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+        printf("í•´ë‹¹ taskëŠ” ì¡´ìž¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
         return;
     }
-    printf("No. Model(task): %s     DueDate: %s\nAcc(%%): %d   CompeletionRate(%%): %d   Engineer: %s\n",
+    printf("\nModel(task): %s\nDueDate: %s\nAcc(%%): %d\nCompeletionRate(%%): %d\nEngineer: %s\n",
       t[n]->title, t[n]->due_date, t[n]->Acc, t[n]->compeleted, t[n]->engineer);
+    printf("\nDescription:");
     printf("\n%s",t[n]->description);
 }
 int stoi(char *s){
