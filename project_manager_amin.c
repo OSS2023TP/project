@@ -24,12 +24,12 @@ int stoi(char *s){
 
 void ascending_date(Task *t[], int count){
   Task *ascending[128];
-  for(int i = 0; i < 128; i++){
+  for(int i = 0; i < count; i++){
     ascending[i] = t[i];
   }
   Task *temp;
   for(int i = 0; i < count; i++){
-    for(int j = i+1; j < count-1; j++){
+    for(int j = i+1; j < count; j++){
       if(stoi(ascending[j]->due_date) < stoi(ascending[i]->due_date)){
         temp = ascending[i];
         ascending[i] = ascending[j];
@@ -41,12 +41,12 @@ void ascending_date(Task *t[], int count){
 }
 void descending_date(Task *t[], int count){
   Task *descending[128];
-  for(int i = 0; i < 128; i++){
+  for(int i = 0; i < count; i++){
     descending[i] = t[i];
   }
   Task *temp;
   for(int i = 0; i < count; i++){
-    for(int j = i+1; j < count-1; j++){
+    for(int j = i+1; j < count; j++){
       if(stoi(descending[j]->due_date) > stoi(descending[i]->due_date)){
         temp = descending[i];
         descending[i] = descending[j];
