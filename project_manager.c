@@ -35,7 +35,7 @@ void listTask(Task *t[], int count){
 
 // 하나의 Task 출력
 void readTask(Task t){
-        printf("%-22s %-11s %-5d %-5d %-10s %s\n", t.title, t.due_date, t.Acc, t.compeleted, t.engineer, t.description);
+        printf("%-22s %-11s %-5d %-5d %-10s\n", t.title, t.due_date, t.Acc, t.compeleted, t.engineer);
 }
 
 // Select Data Number
@@ -90,7 +90,7 @@ void searchDuedate(Task **t, int count){
         int scnt = 0;
         printf("검색할 Task Duedate? ");
         scanf("%s", dname);
-        printf("No. Task(model)    DueDate     Acc(%%)    CompeletionRate(%%)    Engineer    Description\n");
+        printf("No. Task(model)    DueDate     Acc(%%)    CompeletionRate(%%)    Engineer\n");
         printf("------------------------------------------------------------------------------------\n");
         for(int i = 0; i < count; i++){
                 if((*t)[i].Acc == -1) continue;
