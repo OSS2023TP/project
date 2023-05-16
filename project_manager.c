@@ -25,7 +25,7 @@ int selectMenu(){
 
 void listTask(Task *t[], int count){
         int i = 0;
-        printf("No. Model(task)            DueDate     Acc(%%) CompeletionRate(%%)    Engineer\n");
+        printf("No. Model(task)            DueDate    Acc(%%) CompeletionRate(%%)    Engineer\n");
         printf("------------------------------------------------------------------------------------\n");
         for (i = 0; i < count; i++){
                 if (t[i] == NULL) continue;
@@ -37,7 +37,7 @@ void listTask(Task *t[], int count){
 
 // �ϳ��� Task ���
 void readTask(Task t){
-        printf("%-22s %-11s %-5d %-5d %-10s\n", t.title, t.due_date, t.Acc, t.compeleted, t.engineer);
+        printf("%-22s %-11s %-10d %-17d %-10s\n", t.title, t.due_date, t.Acc, t.compeleted, t.engineer);
 }
 
 // Select Data Number
