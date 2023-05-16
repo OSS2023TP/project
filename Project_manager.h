@@ -8,7 +8,7 @@ typedef struct {
     int Acc;
     int compeleted;
     char engineer[128];
-    char description[256];
+    char description[2048];
 } Task;
 
 int selectMenu();
@@ -27,3 +27,6 @@ int loadData(Task **t);
 void saveData(Task **t, int count);
 
 void show_info(Task *t[], int count);//amin
+void ascending_date(Task *t[], int count);
+void descending_date(Task *t[], int count);
+int stoi(char *s);
