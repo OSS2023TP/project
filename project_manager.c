@@ -15,6 +15,8 @@ int selectMenu(){
         printf("7. Task 책임자 검색\n");
         printf("8. Model 검색\n");
         printf("9. Task 자세히 보기\n");
+        printf("10. Date별 오름차순 조회\n");
+        printf("11. Date별 내림차순 조회\n");
         printf("0. 종료\n\n");
         printf("=> 원하는 메뉴는? ");
         scanf("%d", &menu);
