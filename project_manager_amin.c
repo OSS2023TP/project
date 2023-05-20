@@ -1,16 +1,17 @@
 #include <stdio.h> 
 #include <stdlib.h> 
+#include <time.h>
 #include <string.h>
 #include "Project_manager.h"
 
 void show_info(Task *t[], int count){
     listTask(t, count);
     int n;
-    printf("ìì„¸íˆ ë³´ê³ ì‹¶ì€ task ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+    printf("ÀÚ¼¼È÷ º¸°í½ÍÀº task ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
     scanf("%d", &n);
     n-=1;
     if(n > count || n < 0){
-        printf("í•´ë‹¹ taskëŠ” ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
+        printf("ÇØ´ç task´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
         return;
     }
     printf("\nModel(task): %s\nDueDate: %s\nAcc(%%): %d\nCompeletionRate(%%): %d\nEngineer: %s\n",
@@ -57,4 +58,58 @@ void descending_date(Task *t[], int count){
   }
   listTask(descending,count);
 }
+void show_acc(Task *t[], int count){
+  for(int i = 0; i <=100; i++){
+    if(i%10 == 0)
+      printf("%d   ",i);
+  }
+  printf("\n");
+  for(int i = 0; i <= 10; i++){
+    printf("|    ");
+  }
+  printf("\n");
+  for(int i = 0; i <=50; i++){
+    printf("*");
+  }
+  printf("\n");
+  for(int i = 0; i < count; i++){
+      for(int j = 1; j <= (int)t[i]->Acc/2 + 1; j++){
+        printf("*");
+      }
+      printf("%s\n", t[i]->title);
+  }
+}
 
+void show_due_date(Task *t[], int count){
+  time_t now = time(NULL);
+
+  // ÇöÀç ½Ã°£À» Áö¿ª ½Ã°£ ±¸Á¶Ã¼·Î º¯È¯
+  struct tm* timeinfo = localtime(&now);
+
+  // ÇöÀç ³¯Â¥ Á¤º¸ ¾ò±â
+  int year = timeinfo->tm_year + 1900;
+  int month = timeinfo->tm_mon + 1;
+  int day = timeinfo->tm_mday;
+
+  // ³¯Â¥¸¦ ¹®ÀÚ¿­·Î º¯È¯ÇÏ¿© ÀúÀå
+  char date[9];
+  sprintf(date, "%04d%02d%02d", year, month, day);
+  for(int i = 0; i <=100; i++){
+    if(i%10 == 0)
+      printf("%d   ",i);
+  }
+  printf("\n");
+  for(int i = 0; i <= 10; i++){
+    printf("|    ");
+  }
+  printf("\n");
+  for(int i = 0; i <=50; i++){
+    printf("*");
+  }
+  printf("\n");
+  for(int i = 0; i < count; i++){
+    if(stoi(date) < stoi(t[i]->due_date)){
+      printf("%s\n", t[i]->title);
+    }
+  }
+}
