@@ -30,3 +30,5 @@ void show_info(Task *t[], int count);//amin
 void ascending_date(Task *t[], int count);
 void descending_date(Task *t[], int count);
 int stoi(char *s);
+void show_acc(Task *t[], int count);
+void show_due_date(Task *t[], int count);
