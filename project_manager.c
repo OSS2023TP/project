@@ -5,20 +5,20 @@
 
 int selectMenu(){
         int menu;
-        printf("\n*** ��ǰ �˻�â ***\n");
-        printf("1. Task ��ȸ\n");
-        printf("2. Task �߰�\n");
-        printf("3. Task ����\n");
-        printf("4. Task ����\n");
-        printf("5. ���� ����\n");
-        printf("6. Task DueDate �˻�\n");
-        printf("7. Task å���� �˻�\n");
-        printf("8. Model �˻�\n");
-        printf("9. Task �ڼ��� ����\n");
-        printf("10. Date�� �������� ��ȸ\n");
-        printf("11. Date�� �������� ��ȸ\n");
-        printf("0. ����\n\n");
-        printf("=> ���ϴ� �޴���? ");
+        printf("\n*** ??? ???? ***\n");
+        printf("1. Read Task\n");
+        printf("2. Create Task\n");
+        printf("3. Update Task\n");
+        printf("4. Delete Task\n");
+        printf("5. Save filen");
+        printf("6. Search DueDate ???\n");
+        printf("7. Search Engineer ???\n");
+        printf("8. Search Model ???\n");
+        printf("9. Task Detail ???\n");
+        printf("10. Ascending Date ???\n");
+        printf("11. Descending Date  ???\n");
+        printf("0. Exit\n");
+        printf("=>  What menu do you want : ");
         scanf("%d", &menu);
         return menu;
 }
@@ -35,7 +35,7 @@ void listTask(Task *t[], int count){
         printf("\n");
 }
 
-// �ϳ��� Task ���
+// Read Task
 void readTask(Task t){
         printf("%-22s %-11s %-10d %-17d %-10s\n", t.title, t.due_date, t.Acc, t.compeleted, t.engineer);
 }
@@ -44,12 +44,12 @@ void readTask(Task t){
 int selectDataNo(Task *t[], int count){
         int no;
         listTask(t, count);
-        printf("\n��ȣ�� (���:0)? ");
+        printf("\nNumber? (Cancel:0)? ");
         scanf("%d", &no);
         return no;
 }
 
-// Task �߰�
+// Create Task
 int createTask(Task *t){
         printf("Task Name? ");
         scanf(" %[^\n]", t->title);
@@ -63,12 +63,12 @@ int createTask(Task *t){
         scanf(" %s", t->engineer);
         printf("Description? ");
         scanf(" %[^\n]", t->description);
-        printf("=> �߰���!\n");
+        printf("=> Complete\n");
         return 1;
 }
 
 
-// Task ����
+// Update Task
 int updateTask(Task *t){
         printf("Task Name? ");
         scanf(" %[^\n]", t->title);
@@ -76,21 +76,21 @@ int updateTask(Task *t){
         scanf(" %s", t->due_date);
         printf("Test Acc(%%)? ");
         scanf(" %d", &t->Acc);
-        printf("Task CompeletionRate(%%)? ");
+        printf("Task Compeletion Rate(%%)? ");
         scanf(" %d", &t->compeleted);
         printf("Task Engineer? ");
         scanf(" %s", t->engineer);
         printf("Description? ");
         scanf(" %[^\n]", t->description);
-        printf("=> �����Ϸ�!\n");
+        printf("=> Completen");
         return 1;
 }
 
-// Task DueDate �˻�
+// Search DueDate
 void searchDuedate(Task **t, int count){
         char dname[20];
         int scnt = 0;
-        printf("�˻��� Task Duedate? ");
+        printf("Duedate to search? ");
         scanf("%s", dname);
         printf("No. Task(model)    DueDate     Acc(%%)    CompeletionRate(%%)    Engineer\n");
         printf("------------------------------------------------------------------------------------\n");
@@ -102,15 +102,15 @@ void searchDuedate(Task **t, int count){
                         scnt ++;
                 }
         }
-        if(scnt == 0) printf("=> �˻��� ������ ����!");
+        if(scnt == 0) printf("=> No data !");
         printf("\n");
 }
 
-// Task Engineer �˻�
+// Search Engineer
 void searchEngineer(Task **t, int count){
         char ename[20];
         int scnt = 0;
-        printf("�˻��� Engineer? ");
+        printf("Engineer to search? ");
         scanf("%s", ename);
         printf("No. Task(model)    DueDate     Acc(%%)    CompeletionRate(%%)    Engineer\n");
         printf("------------------------------------------------------------------------------------\n");
@@ -122,15 +122,15 @@ void searchEngineer(Task **t, int count){
                         scnt ++;
                 }
         }
-        if(scnt == 0) printf("=> �˻��� ������ ����!");
+        if(scnt == 0) printf("=> No data !");
         printf("\n");
 }
 
-// Task Task �˻�
+// Search Task
 void searchTask(Task **t, int count){
         char tname[3];
         int scnt = 0;
-        printf("�˻��� Task? ");
+        printf("Task to search? ");
         scanf(" %s", tname);
         printf("No. Task(model)    DueDate     Acc(%%)    CompeletionRate(%%)    Engineer\n");
         printf("------------------------------------------------------------------------------------\n");
@@ -142,17 +142,17 @@ void searchTask(Task **t, int count){
                         scnt ++;
                 }
         }
-        if(scnt == 0) printf("=> �˻��� ������ ����!");
+        if(scnt == 0) printf("=> No data !");
         printf("\n");
 }
 
-// File���� ������ �ҷ�����
+// Load file
 int loadData(Task **t) {
         int i = 0;
         FILE *fp;
         fp = fopen("Task.txt", "rt");
         if(fp == NULL) {
-                printf("=> ���� ����\n");
+                printf("=> ???? ????\n");
                 return i;
         }
         else {
@@ -167,12 +167,12 @@ int loadData(Task **t) {
                         fscanf(fp, "%[^,],", t[i]->description);
                 }
                 fclose(fp);
-                printf("=> �ε� ����!\n");
+                printf("=> Loading success!\n");
         }
         return i;
 }
 
-// File ����
+// Save file
 void saveData(Task **t, int count) {
         FILE *fp;
         fp = fopen("Task.txt", "wt");
@@ -181,5 +181,5 @@ void saveData(Task **t, int count) {
                 fprintf(fp, "%s, %s, %d, %d, %s, %s\n", t[i]->title, t[i]->due_date, t[i]->Acc, t[i]->compeleted, t[i]->engineer, t[i]->description);
         }
         fclose(fp);
-        printf("=> �����! \n");
+        printf("=> Save success!\n");
 }
