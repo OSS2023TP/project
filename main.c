@@ -54,6 +54,7 @@ int main(void) {
     else if(menu == 9) show_info(tlist, index);
     else if(menu == 10) ascending_date(tlist, index);
     else if(menu == 11) descending_date(tlist, index);
+    else if(menu == 12) show_acc(tlist, index);
   }
   printf("종료됨!\n");
   return 0; 
