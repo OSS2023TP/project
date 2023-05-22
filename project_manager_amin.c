@@ -7,11 +7,11 @@
 void show_info(Task *t[], int count){
     listTask(t, count);
     int n;
-    printf("자세히 보고싶은 task 번호를 입력하세요: ");
+    printf("Enter the Task number you want to see in detail: ");
     scanf("%d", &n);
     n-=1;
     if(n > count || n < 0){
-        printf("해당 task는 존재하지 않습니다.\n");
+        printf("Task doesn't exist.\n");
         return;
     }
     printf("\nModel(task): %s\nDueDate: %s\nAcc(%%): %d\nCompeletionRate(%%): %d\nEngineer: %s\n",
@@ -83,15 +83,15 @@ void show_acc(Task *t[], int count){
 void show_due_date(Task *t[], int count){
   time_t now = time(NULL);
 
-  // 현재 시간을 지역 시간 구조체로 변환
+  // Convert current time to local time structure
   struct tm* timeinfo = localtime(&now);
 
-  // 현재 날짜 정보 얻기
+  // Get Current Date Information
   int year = timeinfo->tm_year + 1900;
   int month = timeinfo->tm_mon + 1;
   int day = timeinfo->tm_mday;
 
-  // 날짜를 문자열로 변환하여 저장
+  // Convert date to string and save
   char date[9];
   sprintf(date, "%04d%02d%02d", year, month, day);
   for(int i = 0; i <=100; i++){
