@@ -17,8 +17,8 @@ int selectMenu(){
         printf("9. Detail of Task ?\n");
         printf("10. Ascending of Date ?\n");
         printf("11. Descending of Date ?\n");
-        printf("12. Descending of Acc ?\n");
-        printf("13 Show remaining period of Date ?\n");
+        printf("12. Show Acc to picture ?\n");
+        printf("13 Show picture remaining period of Date ?\n");
         printf("0. Exit\n");
         printf("=>  What menu do you want : ");
         scanf("%d", &menu);
