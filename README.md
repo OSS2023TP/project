@@ -15,10 +15,14 @@
 
 ## 포함 기능
   - CRUD 기능
+  - 파일 저장 / 불러오기
   - DueDate 검색 기능
   - 책임자(Engineer) 검색 기능
   - Task(model) 검색 기능
-  - 파일 저장 / 불러오기
+  - 자세히 보기
+  - DueDate 오름차순 보기
+  - DueDate 내림차순 보기
+  - Acc 높은 순 보기
 
 ## 개발 환경 및 언어
   - git
