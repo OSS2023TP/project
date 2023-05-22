@@ -60,6 +60,7 @@ void descending_date(Task *t[], int count){
   listTask(descending,count);
 }
 void show_acc(Task *t[], int count){
+  printf("Acc\n");
   for(int i = 0; i <=100; i++){
     if(i%10 == 0)
       printf("%d   ",i);
@@ -82,6 +83,7 @@ void show_acc(Task *t[], int count){
 }
 
 void show_due_date(Task *t[], int count){
+  printf("Due_date\n");
   time_t now = time(NULL);
 
   // Convert current time to local time structure
