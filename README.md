@@ -22,8 +22,8 @@
   - 자세히 보기
   - DueDate 오름차순 보기
   - DueDate 내림차순 보기
-  - Acc 높은 순 보기
-
+  - 콘솔창 그림으로 Acc 보기
+  - 콘솔창 그림으로 Due_date 보기
 ## 개발 환경 및 언어
   - git
   - vscode
