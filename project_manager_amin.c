@@ -1,6 +1,7 @@
 #include <stdio.h> 
 #include <stdlib.h> 
 #include <time.h>
+#include <math.h>
 #include <string.h>
 #include "Project_manager.h"
 
@@ -108,7 +109,10 @@ void show_due_date(Task *t[], int count){
   }
   printf("\n");
   for(int i = 0; i < count; i++){
-    if(stoi(date) < stoi(t[i]->due_date)){
+    if(atoi(date) < atoi(t[i]->due_date)){
+      for(int j = 0; j < (atoi(t[i]->due_date) - atoi(date))*5/2 + 1; j++){
+        printf("*");
+      }
       printf("%s\n", t[i]->title);
     }
   }
